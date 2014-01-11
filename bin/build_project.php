@@ -59,7 +59,7 @@ function lucid__build_project($config)
 	$serve1 = str_replace('{dev-port}',$config['choices']['dev-port'],$serve1);
 	if($config['choices']['use-wiki'])
 	{
-		$serve1 .= ' && php --server 0.0.0.0:{wiki-port} --docroot $current_dir/../lib/project-wiki/ --php-ini $current_dir/../etc/';
+		$serve1 .= ' & php --server 0.0.0.0:{wiki-port} --docroot $current_dir/../lib/project-wiki/ --php-ini $current_dir/../etc/';
 		$serve1 = str_replace('{wiki-port}',$config['choices']['wiki-port'],$serve1);
 	}
 	file_put_contents($config['choices']['path'].'/bin/serve.sh',$serve1);
@@ -67,7 +67,7 @@ function lucid__build_project($config)
 	$serve2 = str_replace('{dev-port}',$config['choices']['dev-port'],$serve2);
 	if($config['choices']['use-wiki'])
 	{
-		$serve2 .= ' && php --server 0.0.0.0:{wiki-port} --docroot $current_dir/../lib/project-wiki/ --php-ini $current_dir/../etc/';
+		$serve2 .= ' & php --server 0.0.0.0:{wiki-port} --docroot $current_dir/../lib/project-wiki/ --php-ini $current_dir/../etc/';
 		$serve2 = str_replace('{wiki-port}',$config['choices']['wiki-port'],$serve2);
 	}
 	file_put_contents($config['choices']['path'].'/bin/serve.bat',$serve2);
