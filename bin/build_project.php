@@ -44,13 +44,11 @@ function lucid__build_project($config)
 	
 	$serve1 = file_get_contents(__DIR__.'/serve.sh');
 	$serve1 = str_replace('{dev-port}',$config['choices']['dev-port'],$serve1);
-	file_put_contents($config['choices']['path'].'/bin/',$serve1);
-	$serve1 = file_get_contents(__DIR__.'/serve.bat');
-	$serve1 = str_replace('{dev-port}',$config['choices']['dev-port'],$serve1);
-	file_put_contents($config['choices']['path'].'/bin/',$serve1);
+	file_put_contents($config['choices']['path'].'/bin/serve.sh',$serve1);
+	$serve2 = file_get_contents(__DIR__.'/serve.bat');
+	$serve2 = str_replace('{dev-port}',$config['choices']['dev-port'],$serve2);
+	file_put_contents($config['choices']['path'].'/bin/serve.bat',$serve2);
 	
-	$script .= 'cp lib/lucid-project/bin/serve.bat bin/;';
-	$script .= 'cp lib/lucid-project/bin/serve.sh bin/;';
 	$script .= 'cp lib/lucid-project/www/media/cacher.php www/media/;';
 	
 	echo("Copying over app project files...\n");
