@@ -49,6 +49,7 @@ function lucid__build_project($config)
 	$serve2 = str_replace('{dev-port}',$config['choices']['dev-port'],$serve2);
 	file_put_contents($config['choices']['path'].'/bin/serve.bat',$serve2);
 	
+	$script .= 'cp lib/lucid-project/www/index.php www/;';
 	$script .= 'cp lib/lucid-project/www/media/cacher.php www/media/;';
 
 	echo("Copying over app project files...\n");
