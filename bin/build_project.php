@@ -54,6 +54,15 @@ function lucid__build_project($config)
 	
 	$script .= 'cp lib/lucid-project/www/index.php www/;';
 	$script .= 'cp lib/lucid-project/www/media/cacher.php www/media/;';
+	
+	if($config['choices']['ui'] == 'bootstrap')
+	{
+		$script .= 'cp lib/lucid-project/www/media/less/customizations.less www/media/less;';
+	}
+	if($config['choices']['ui'] == 'foundation')
+	{
+		$script .= 'cp lib/lucid-project/www/media/scss/customizations.scss www/media/scss;';
+	}
 	$script .= 'cp lib/lucid-project/etc/cacher.php etc/;';
 	$script .= 'cp lib/lucid-project/etc/db.php etc/;';
 
