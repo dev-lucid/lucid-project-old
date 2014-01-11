@@ -2,7 +2,7 @@
 
 function lucid__build_project($config)
 {
-	$script = '';
+	$script = 'cd '.$config['choices']['path'].";\n";
 	echo("Setting up secondary submodules...\n");
 	$script .= 'git submodule add '.$config['repo-urls']['router-lucid']." lib/lucid-router/;\n";
 	
