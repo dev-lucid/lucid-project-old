@@ -105,13 +105,13 @@ function lucid__build_project($config)
 	shell_exec($script);
 	
 	# fix up the wiki a bit
-	$index = file_get_contents(__DIR__.'/../lib/project-wiki/index.php');
+	$index = file_get_contents(__DIR__.'/../../project-wiki/index.php');
 	$index = str_replace('WIKI_TITLE = "New wiki"','WIKI_TITLE = "'.$config['choices']['name'].'"',$index);
 	$index = str_replace('LANG = "no"','LANG = "en"',$index);
 	$index = str_replace('HISTORY_COMPRESSION = "gzip"','HISTORY_COMPRESSION = "plain"',$index);
 	$index = str_replace('START_PAGE = "Innhold"','START_PAGE = "Landing"',$index);
 	$index = str_replace('TIME_FORMAT = "%d.%m.%Y %R";',"TIME_FORMAT = \"%d.%m.%Y %R\";\n\t\tdate_default_timezone_set('UTC');",$index);
-	file_put_contents(__DIR__.'/../lib/project-wiki/index.php',$index);
+	file_put_contents(__DIR__.'/../../project-wiki/index.php',$index);
 	
 	
 	echo("To run your project, type: ".$config['choices']['last_folder']."/bin/serve.sh\n");
