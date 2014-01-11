@@ -9,7 +9,7 @@ function lucid__build_project($config)
 	$config['choices']['ui'] = ($config['choices']['ui'] == 'extjs')?'none':$config['choices']['ui'];
 	if($config['choices']['ui'] != 'none')
 	{
-		#$script .= 'git submodule add '.$config['repo-urls']['ui-'.$config['choices']['ui']]." lib/".$config['choices']['ui']."/;\n";
+		$script .= 'git submodule add '.$config['repo-urls']['ui-'.$config['choices']['ui']]." lib/".$config['choices']['ui']."/;\n";
 	}
 	$script .= 'git submodule add '.$config['repo-urls']['validator-lucid']." lib/lucid-validator/;\n";
 	
@@ -34,7 +34,6 @@ function lucid__build_project($config)
 	$script .= 'git submodule add '.$config['repo-urls']['hash-change']." lib/hash-change/;\n";
 	$script .= 'git submodule add '.$config['repo-urls']['jsmin']." lib/jsmin-php/;\n";
 	$script .= "git submodule update --init --recursive;\n";
-	#exit($script);
 	shell_exec($script);
 	
 	echo("Assembling dev/maintenance scripts...\n");
