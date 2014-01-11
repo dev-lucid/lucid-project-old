@@ -50,16 +50,16 @@ function lucid__build_project($config)
 	file_put_contents($config['choices']['path'].'/bin/serve.bat',$serve2);
 	
 	$script .= 'cp lib/lucid-project/www/media/cacher.php www/media/;';
-	
+
 	echo("Copying over app project files...\n");
-	
+	shell_exec($script);
 	
 	echo("Setting up permissions...\n");
 	$script = 'cd '.$config['choices']['path'].";\n";
 	$script .= "chmod 777 www/media/cache;\n";
 	$script .= "chmod 777 var;\n";
 	$script .= "chmod 777 bin/serve*;\n";
-	
+	shell_exec($script);
 	
 	echo("To run your project, type: ".$config['choices']['last_folder']."/bin/serve.sh\n");
 }
