@@ -64,6 +64,7 @@ function lucid__build_project($config)
 	}
 	$script .= 'cp lib/lucid-project/etc/cacher.php etc/;';
 	$script .= 'cp lib/lucid-project/etc/db.php etc/;';
+	$script .= 'cp lib/lucid-project/etc/php.ini etc/;';
 
 	echo("Copying over app project files...\n");
 	shell_exec($script);
