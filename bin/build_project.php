@@ -33,7 +33,7 @@ function lucid__build_project($config)
 	
 	$script .= 'git submodule add '.$config['repo-urls']['hash-change']." lib/hash-change/;\n";
 	$script .= "git submodule update --init --recursive;\n";
-	exit($script);
+	#exit($script);
 	shell_exec($script);
 	
 	echo("Assembling dev/maintenance scripts...\n");
