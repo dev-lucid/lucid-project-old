@@ -61,7 +61,7 @@ function lucid__build_project($config)
 	$script .= "chmod 777 bin/serve*;\n";
 	
 	
-	echo("To run your project, type: bin/serve.sh\n");
+	echo("To run your project, type: ".$config['choices']['last_folder']."/bin/serve.sh\n");
 }
 
 ?>
