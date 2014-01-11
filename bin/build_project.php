@@ -52,6 +52,7 @@ function lucid__build_project($config)
 	file_put_contents($config['choices']['path'].'/www/media/js/jquery.js',file_get_contents('http://code.jquery.com/jquery-latest.min.js'));
 	
 	$script .= 'cp lib/lucid-project/www/index.php www/;';
+	$script .= 'cp lib/lucid-project/www/app.php www/;';
 	$script .= 'cp lib/lucid-project/www/media/cacher.php www/media/;';
 	
 	if($config['choices']['ui'] == 'bootstrap')
