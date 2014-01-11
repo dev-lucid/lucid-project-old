@@ -42,10 +42,10 @@ function lucid__build_project($config)
 	$script .= 'cp lib/lucid-project/bin/patches.php bin/;';
 	$script .= 'cp lib/lucid-project/bin/test.php bin/;';
 	
-	$serve1 = file_get_contents('serve.sh');
+	$serve1 = file_get_contents(__DIR__.'/serve.sh');
 	$serve1 = str_replace('{dev-port}',$config['choices']['dev-port'],$serve1);
 	file_put_contents($config['choices']['path'].'/bin/',$serve1);
-	$serve1 = file_get_contents('serve.bat');
+	$serve1 = file_get_contents(__DIR__.'/serve.bat');
 	$serve1 = str_replace('{dev-port}',$config['choices']['dev-port'],$serve1);
 	file_put_contents($config['choices']['path'].'/bin/',$serve1);
 	
