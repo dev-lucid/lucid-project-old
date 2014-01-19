@@ -104,6 +104,9 @@ function lucid__build_project($config)
 	$script .= "chmod 777 bin/serve*;\n";
 	shell_exec($script);
 	
+	
+	ini_write($config['choices']['path'].'/etc/build.ini',$config['choices']);
+	
 	# fix up the wiki a bit
 	/*
 	$index = file_get_contents(__DIR__.'/../../project-wiki/index.php');
