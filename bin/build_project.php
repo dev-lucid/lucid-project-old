@@ -105,7 +105,7 @@ function lucid__build_project($config)
 	shell_exec($script);
 	
 	
-	ini_write($config['choices']['path'].'/etc/build.ini',$config['choices']);
+	ini_write($config['choices']['path'].'/etc/build.ini',$config);
 	
 	# fix up the wiki a bit
 	/*
