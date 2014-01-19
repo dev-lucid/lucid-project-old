@@ -105,7 +105,7 @@ function lucid__build_project($config)
 	shell_exec($script);
 	
 	
-	$writeable_config = clone($config);
+	$writeable_config = clone $config;
 	unset($writeable_config['has']);
 	unset($writeable_config['repo-urls']);
 	ini_write($config['choices']['path'].'/etc/build.ini',$writeable_config);
