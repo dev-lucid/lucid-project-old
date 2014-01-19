@@ -52,7 +52,7 @@ function lucid__build_project($config)
 	$script = 'cd '.$config['choices']['path'].";\n";
 	$script .= 'cp lib/lucid-project/bin/deploy.php bin/;';
 	$script .= 'cp lib/lucid-project/bin/patches.php bin/;';
-	$script .= 'cp lib/lucid-project/bin/test.php bin/;';
+	$script .= 'cp lib/lucid-project/bin/tests.php bin/;';
 	
 	# generate the serve scripts
 	$serve1 = file_get_contents(__DIR__.'/serve.sh');
