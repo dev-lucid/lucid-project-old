@@ -15,9 +15,9 @@ $cacher_config = array(
 	
 	),
     'js-dirs'=>array(
+		__DIR__.'/../www/media/js/',
 		__DIR__.'/../lib/bootstrap/js/',
 		__DIR__.'/../lib/lucid-router/lib/js/',
-		__DIR__.'/../www/media/js/',
 	),
 );
 ?>
