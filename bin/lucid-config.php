@@ -55,7 +55,7 @@ $config = array(
 		//'validator-lucid'=>'git@github.com:Dev-Lucid/lucid-validator.git',
 		'validator-lucid'=>'file:///opt/git-clones/lucid-validator/',
 		//'ui-bootstrap'=>'git@github.com:twbs/bootstrap.git',
-		'ui-bootstrap'=>'file:///home/mike/Documents/bootstrap/',
+		'ui-bootstrap'=>'file:///opt/git-clones/bootstrap/',
 		'ui-foundation'=>'git@github.com:zurb/foundation.git',
 		//'orm-lucid'=>'git@github.com:Dev-Lucid/lucid-orm.git',
 		'orm-lucid'=>'file:///opt/git-clones/lucid-orm/',
@@ -67,14 +67,14 @@ $config = array(
 		'test-phpunit'=>'git@github.com:sebastianbergmann/phpunit.git',
 
 		//'less'=>'git@github.com:oyejorge/less.php.git',
-		'less'=>'file:///home/mike/Documents/less.php/',
+		'less'=>'file:///opt/git-clones/less.php/',
 		'scss'=>'git@github.com:leafo/scssphp.git',
 
 		//'jsmin'=>'https://github.com/eriknyk/jsmin-php.git',
-		'jsmin'=>'file:///home/mike/Documents/jsmin-php/',
+		'jsmin'=>'file:///opt/git-clones/jsmin-php/',
 
 		//'hash-change'=>'git@github.com:apopelo/jquery-hashchange.git',
-		'hash-change'=>'file:///home/mike/Documents/jquery-hashchange',
+		'hash-change'=>'file:///opt/git-clones/jquery-hashchange',
 	),
 );
 
@@ -605,7 +605,7 @@ if($config['choices']['print-script'])
 }
 
 shell_exec($script);
-include($config['choices']['last_folder'].'/lib/lucid-project/bin/build_project.php');
+include($config['choices']['path'].'/lib/lucid-project/bin/build_project.php');
 echo("Using Lucid-Project code to bootstrap the build...\n");
 lucid__build_project($config);
 

@@ -121,7 +121,7 @@ function lucid__build_project($config)
 	file_put_contents(__DIR__.'/../../project-wiki/index.php',$index);
 	*/
 	
-	echo("To run your project, type: ".$config['choices']['last_folder']."/bin/serve.sh\n");
+	echo("To run your project, type: ".$config['choices']['path']."/bin/serve.sh\n");
 }
 
 ?>
