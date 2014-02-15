@@ -79,6 +79,19 @@ function lucid__build_project($config)
 	$script .= 'cp lib/lucid-project/www/index.php www/;';
 	$script .= 'cp lib/lucid-project/www/media/cacher.php www/media/;';
 	$script .= 'cp lib/lucid-project/www/app.php www/;';
+	$script .= 'cp lib/lucid-project/www/humans.txt www/;';
+	$script .= 'cp lib/lucid-project/www/robots.txt www/;';
+	$script .= 'cp lib/lucid-project/www/favicon.ico www/;';
+	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/about.php www/controllers/static_content/views/;';
+	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/contact.php www/controllers/static_content/views/;';
+	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/dropdown1.php www/controllers/static_content/views/;';
+	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/dropdown2.php www/controllers/static_content/views/;';
+	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/dropdown3.php www/controllers/static_content/views/;';
+	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/dropdown4.php www/controllers/static_content/views/;';
+	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/details1.php www/controllers/static_content/views/;';
+	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/details2.php www/controllers/static_content/views/;';
+	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/details3.php www/controllers/static_content/views/;';
+		
 	file_put_contents($config['choices']['path'].'/www/media/js/jquery.js',file_get_contents('http://code.jquery.com/jquery-latest.min.js'));
 	
 	# make the directory for less or scss, depending on UI framework choice
