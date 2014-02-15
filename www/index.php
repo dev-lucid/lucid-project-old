@@ -23,11 +23,11 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.php">Project name</a>
+					<a class="navbar-brand" href="index.php#!static_content/index">Project name</a>
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.php">Home</a></li>
+						<li class="active"><a href="index.php#!static_content/index">Home</a></li>
 						<li><a href="#!static_content/about">About</a></li>
 						<li><a href="#!static_content/contact">Contact</a></li>
 						<li class="dropdown">
@@ -38,12 +38,12 @@
 								<li class="divider"></li>
 								<li class="dropdown-header">Nav header</li>
 								<li><a href="#!static_content/dropdown3">Action 3</a></li>
-								<li><a href="#!static_content/dropdown3">Action 4</a></li>
+								<li><a href="#!static_content/dropdown4">Action 4</a></li>
 								
 							</ul>
 						</li>
 					</ul>
-					<form class="navbar-form navbar-right">
+					<form class="navbar-form navbar-right" style="display: none;">
 						<div class="form-group">
 							<input type="text" placeholder="Email" class="form-control">
 						</div>
@@ -55,37 +55,15 @@
 				</div><!--/.navbar-collapse -->
 			</div>
 		</div>
-		<div id="main">
-			<!-- Main jumbotron for a primary marketing message or call to action -->
-			<div class="jumbotron">
-				<div class="container">
-					<h1>Hello, world!</h1>
-					<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-					<p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-				</div>
+		<div id="full-width" class="container">
+		</div>
+		<div class="row" id="split" style="display:none;">
+			<div id="left" class="col-xs-12 col-sm-12 col-md4 col-lg-3 container">
 			</div>
-
-			<div class="container">
-				<!-- Example row of columns -->
-				<div class="row">
-					<div class="col-lg-4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-						<p><a class="btn btn-default" href="#!static_content/details1">View details &raquo;</a></p>
-					</div>
-						<div class="col-lg-4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-						<p><a class="btn btn-default" href="#!static_content/details2">View details &raquo;</a></p>
-					</div>
-					<div class="col-lg-4">
-						<h2>Heading</h2>
-						<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-						<p><a class="btn btn-default" href="#!static_content/details3">View details &raquo;</a></p>
-					</div>
-				</div>
+			<div id="center" class="col-xs-12 col-sm-12 col-md8 col-lg-9 container">
 			</div>
 		</div>
+		
 		<div class="container">
 			<footer>
 				<p>&copy; Company 2013</p>

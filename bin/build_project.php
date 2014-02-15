@@ -82,6 +82,7 @@ function lucid__build_project($config)
 	$script .= 'cp lib/lucid-project/www/humans.txt www/;';
 	$script .= 'cp lib/lucid-project/www/robots.txt www/;';
 	$script .= 'cp lib/lucid-project/www/favicon.ico www/;';
+	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/index.php www/controllers/static_content/views/;';
 	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/about.php www/controllers/static_content/views/;';
 	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/contact.php www/controllers/static_content/views/;';
 	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/dropdown1.php www/controllers/static_content/views/;';
