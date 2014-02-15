@@ -92,6 +92,11 @@ function lucid__build_project($config)
 	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/details1.php www/controllers/static_content/views/;';
 	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/details2.php www/controllers/static_content/views/;';
 	$script .= 'cp lib/lucid-project/www/controllers/static_content/views/details3.php www/controllers/static_content/views/;';
+
+	$script .= 'cp lib/lucid-project/www/controllers/navigation/views/left_1.php www/controllers/navigation/views/;';
+	$script .= 'cp lib/lucid-project/www/controllers/navigation/views/left_2.php www/controllers/navigation/views/;';
+	$script .= 'cp lib/lucid-project/www/controllers/navigation/views/left_3.php www/controllers/navigation/views/;';
+
 		
 	file_put_contents($config['choices']['path'].'/www/media/js/jquery.js',file_get_contents('http://code.jquery.com/jquery-latest.min.js'));
 	

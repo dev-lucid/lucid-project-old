@@ -574,8 +574,10 @@ else
 	$script .= "svn checkout ".$config['choices']['repo-url']." ".$config['choices']['last_folder'].";\n";
 }
 $script .= "cd ".$config['choices']['last_folder'].";\n";
-$script .= "mkdir bin;mkdir db;mkdir db/patches;mkdir db/builds;mkdir db/models;mkdir etc;mkdir lib;mkdir var;\n";
-$script .= "mkdir www;mkdir www/controllers;mkdir www/controllers/static_content;mkdir www/controllers/static_content/views;mkdir www/media;mkdir www/media/js;mkdir www/media/cache;";
+$script .= "mkdir bin;mkdir db;mkdir db/patches;mkdir db/builds;mkdir db/models;mkdir etc;mkdir lib;mkdir var;mkdir www;mkdir www/controllers;\n";
+$script .= "mkdir www/controllers/static_content;mkdir www/controllers/static_content/views;";
+$script .= "mkdir www/controllers/navigation;mkdir www/controllers/navigation/views;";
+$script .= "mkdir www/media;mkdir www/media/js;mkdir www/media/cache;";
 
 if($config['choices']['ui'] == 'bootstrap')
 {
