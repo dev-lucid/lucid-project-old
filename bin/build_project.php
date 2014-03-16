@@ -23,7 +23,7 @@ function lucid__build_project($config)
 	}
 	if($config['choices']['test'] != 'none')
 	{
-		$script .= 'git submodule add '.$config['repo-urls']['orm-'.$config['choices']['test']]." lib/".$config['choices']['test']."-test/;\n";
+		$script .= 'git submodule add '.$config['repo-urls']['test-'.$config['choices']['test']]." lib/".$config['choices']['test']."-test/;\n";
 	}
 	
 	# the next gen css compiler, depending on UI framework
