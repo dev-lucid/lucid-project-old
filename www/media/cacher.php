@@ -3,7 +3,7 @@ global $cacher_config;
 include(__DIR__.'/../../etc/cacher.php');
 ob_start();
 
-if(!isset($_REQUEST['type']) || !isset($cacher_config[$_REQUEST['type'].'-dirs']))
+if(!isset($_REQUEST['type']) || !isset($cacher_config[$_REQUEST['type'].'-files']))
 {
     exit('/* must specific type param, either ?type=less or ?type=js */');
 }
@@ -41,6 +41,10 @@ function get_mtimes($path)
 		  }
 	  }
     }
+    else
+    {
+		$to_return .= filemtime($path);
+	}
 	return $to_return;
 }
 
@@ -48,7 +52,7 @@ function get_mtimes($path)
 
 # build a unique signature for this version of all related files
 $alltimes = '';
-foreach($cacher_config[$_REQUEST['type'].'-dirs'] as $key=>$value)
+foreach($cacher_config[$_REQUEST['type'].'-files'] as $key=>$value)
 {
 	$alltimes .= get_mtimes((($_REQUEST['type'] == 'less')?$key:$value));
 }
@@ -71,15 +75,17 @@ if(!file_exists($outfile))
     if($_REQUEST['type'] == 'less')
     {
         $parser = new Less_Parser(array( 'compress'=>true ));
-        $parser->SetImportDirs($cacher_config['less-dirs']);
+        $parser->SetImportDirs($cacher_config['less-files']);
         $parser->parseFile($cacher_config['less-entry-point'], '/media/');
         $content = $parser->getCss();
     }
     else if($_REQUEST['type'] == 'js')
     {
         $final_src = '';
-        foreach($cacher_config['js-dirs'] as $path)
+        foreach($cacher_config['js-files'] as $file)
         {
+			$final_src .= file_get_contents($file);
+            /*
             if(is_dir($path))
             {
                 $dir = opendir($path);
@@ -91,6 +97,7 @@ if(!file_exists($outfile))
                     }
                 }
             }
+            */
         }
         
         # got the final src, now load the minifier and write it out

@@ -7,17 +7,28 @@ $cacher_config = array(
 	'path-to-less.php'=>__DIR__.'/../lib/less/lib/',
 	'path-to-scss.php'=>__DIR__.'/../lib/scss/lib/',
 	'cache-directory'=>__DIR__.'/../www/media/cache/',
-	'less-dirs'=>array(
+	'less-files'=>array(
 		__DIR__.'/../lib/bootstrap/less/'=>'/media/',
 		__DIR__.'/../www/media/less/'=>'/media/',
 	),
-	'scss-dirs'=>array(
+	'scss-files'=>array(
 	
 	),
-    'js-dirs'=>array(
-		__DIR__.'/../www/media/js/',
-		__DIR__.'/../lib/bootstrap/js/',
-		__DIR__.'/../lib/lucid-router/lib/js/',
+	'js-files'=>array(
+		__DIR__.'/../www/media/js/jquery.js',
+		__DIR__.'/../lib/bootstrap/js/affix.js',
+		__DIR__.'/../lib/bootstrap/js/alert.js',
+		__DIR__.'/../lib/bootstrap/js/carousel.js',
+		__DIR__.'/../lib/bootstrap/js/collapse.js',
+		__DIR__.'/../lib/bootstrap/js/dropdown.js',
+		__DIR__.'/../lib/bootstrap/js/modal.js',
+		__DIR__.'/../lib/bootstrap/js/tooltip.js',
+		__DIR__.'/../lib/bootstrap/js/popover.js',
+		__DIR__.'/../lib/bootstrap/js/scrollspy.js',
+		__DIR__.'/../lib/bootstrap/js/tab.js',
+		__DIR__.'/../lib/bootstrap/js/tooltip.js',
+		__DIR__.'/../lib/bootstrap/js/transition.js',
+		__DIR__.'/../lib/lucid-router/lib/js/lucid.js',
 	),
 );
 ?>
