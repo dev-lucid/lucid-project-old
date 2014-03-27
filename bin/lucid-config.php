@@ -575,6 +575,12 @@ else
 }
 $script .= "cd ".$config['choices']['last_folder'].";\n";
 $script .= "mkdir bin;mkdir db;mkdir db/patches;mkdir db/builds;mkdir db/models;mkdir etc;mkdir lib;mkdir var;mkdir www;mkdir www/controllers;\n";
+
+if($config['choices']['orm'] == 'lucid')
+{
+	$script .= 'mkdir db/models/base;';
+}
+
 $script .= "mkdir www/controllers/static_content;mkdir www/controllers/static_content/views;";
 $script .= "mkdir www/controllers/navigation;mkdir www/controllers/navigation/views;";
 $script .= "mkdir www/media;mkdir www/media/js;mkdir www/media/cache;";

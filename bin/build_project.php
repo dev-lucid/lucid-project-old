@@ -53,6 +53,17 @@ function lucid__build_project($config)
 	$script .= 'cp lib/lucid-project/bin/deploy.php bin/;';
 	$script .= 'cp lib/lucid-project/bin/patches.php bin/;';
 	$script .= 'cp lib/lucid-project/bin/tests.php bin/;';
+
+	if($config['choices']['orm'] == 'lucid')
+	{
+		$script .= 'cp lib/lucid-project/bin/lucid-orm-db-models.php bin/db-models.php;';
+	}
+	if($config['choices']['db-use-local-sqlite'] == 1)
+	{
+		$script .= 'cp lib/lucid-project/bin/sqlite-db-build.php bin/db-build.php;';
+		$script .= 'cp lib/lucid-project/db/sqlite-build.sql db/sqlite-build.sql;';
+		$script .= 'cp lib/lucid-project/etc/sqlite-db.php etc/db.php;';
+	}
 	
 	# generate the serve scripts
 	$serve1 = file_get_contents(__DIR__.'/serve.sh');
