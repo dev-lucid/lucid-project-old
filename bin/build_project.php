@@ -60,7 +60,7 @@ function lucid__build_project($config)
 	}
 	if($config['choices']['db-use-local-sqlite'] == 1)
 	{
-		$script .= 'cp lib/lucid-project/bin/sqlite-db-build.php bin/db-build.php;';
+		$script .= 'cp lib/lucid-project/bin/sqlite-db-build.sh bin/db-build.sh;';
 		$script .= 'cp lib/lucid-project/db/sqlite-build.sql db/build.sql;';
 		$script .= 'cp lib/lucid-project/etc/sqlite-db.php etc/db.php;';
 	}
