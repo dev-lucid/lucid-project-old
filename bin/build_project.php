@@ -64,6 +64,10 @@ function lucid__build_project($config)
 		$script .= 'cp lib/lucid-project/db/sqlite-build.sql db/build.sql;';
 		$script .= 'cp lib/lucid-project/etc/sqlite-db.php etc/db.php;';
 	}
+	else
+	{
+		$script .= 'cp lib/lucid-project/etc/db.php etc/;';
+	}
 	
 	# generate the serve scripts
 	$serve1 = file_get_contents(__DIR__.'/serve.sh');
@@ -121,7 +125,6 @@ function lucid__build_project($config)
 		$script .= 'cp lib/lucid-project/www/media/scss/customizations.scss www/media/scss;';
 	}
 	$script .= 'cp lib/lucid-project/etc/cacher.php etc/;';
-	$script .= 'cp lib/lucid-project/etc/db.php etc/;';
 	
 
 	echo("Copying over app project files...\n");
@@ -132,6 +135,11 @@ function lucid__build_project($config)
 	$script .= "chmod 777 www/media/cache;\n";
 	$script .= "chmod 777 var;\n";
 	$script .= "chmod 777 bin/serve*;\n";
+	
+	if($config['choices']['db-use-local-sqlite'] == 1)
+	{
+		$script .= 'bin/db-build.sh;php -f bin/db-models.php;';
+	}
 	shell_exec($script);
 	
 	
