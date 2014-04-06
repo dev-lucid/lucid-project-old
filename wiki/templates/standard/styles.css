@@ -1,0 +1,92 @@
+body{
+	font-family: Ubuntu, Helvetica, Arial, Sans Serif;
+	padding: 50px 10px 30px 10px;
+}
+
+div.error{
+	border: #bb2233 1px solid;
+	padding: 5px 10px;
+	margin: 5px;
+	background-color: #FFC4D9;
+	border-radius: 5px;
+}
+
+div.error > b{
+	color: #cc0000;
+}
+
+pre{
+	border: #888 1px solid;
+	background-color: #e2e2ee;
+	font-family: Ubuntu Mono, Menlo, Consolas, monospace;
+    padding: 10px;
+}
+
+a{
+	color: #4455BB;
+	text-decoration: none;
+}
+
+.headnav{
+	background-color: #223355;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 45px;
+	padding: 5px 15px;
+}
+
+.toolbar{
+	position: absolute;
+	top: 55px;
+	right:0px;
+	height: 30px;
+	width: 200px;
+}
+
+.headnav > * > a{
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	margin: 0px 5px;
+}
+
+.footnav{
+	background-color: #e3e3e7;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: 20px;
+	padding: 7px 10px;
+	color: #666;
+	border: #aaa 1px solid;
+	border-width: 1px 0px 0px 0px;
+}
+
+.footnav > p {
+	padding: 0px;
+	margin: 0px;
+}
+.footnav > * > a{
+	color: #666;
+	text-decoration: none;
+	margin: 0px 5px;
+}
+
+.edit{
+	width: 60%; 
+	margin-left: 20%;
+	margin-right: 20%;
+	color: #fff;
+	background-color: #223355;
+	border: #445599 1px solid;
+	border-radius: 2px;
+	font-weight: bold;
+}
+
+textarea{
+	width: 95%;
+	height: 300px;
+}

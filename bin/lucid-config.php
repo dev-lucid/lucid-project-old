@@ -47,9 +47,6 @@ $config = array(
 		//'project-lucid'=>'git@github.com:Dev-Lucid/lucid-project.git',
 		'project-lucid'=>'file:///opt/git-clones/lucid-project/',
 
-		//'project-wiki'=>'git@github.com:splitbrain/dokuwiki.git',
-		'project-wiki'=>'file:///opt/git-clones/dokuwiki/',
-
 		//'router-lucid'=>'git@github.com:Dev-Lucid/lucid-router.git',
 		'router-lucid'=>'file:///opt/git-clones/lucid-router/',
 		//'validator-lucid'=>'git@github.com:Dev-Lucid/lucid-validator.git',
@@ -75,6 +72,10 @@ $config = array(
 
 		//'hash-change'=>'git@github.com:apopelo/jquery-hashchange.git',
 		'hash-change'=>'file:///opt/git-clones/jquery-hashchange',
+		
+		//'parsedown'=>'git@github.com:erusev/parsedown.git',
+		'parsedown'=>'file:///opt/git-clones/parsedown/',
+		
 	),
 );
 

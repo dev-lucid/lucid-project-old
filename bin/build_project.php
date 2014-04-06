@@ -5,8 +5,9 @@ function lucid__build_project($config)
 	$script = 'cd '.$config['choices']['path'].";\n";
 	echo("Setting up secondary submodules...\n");
 	
-	# the url router
+	# the url router, parsedown.
 	$script .= 'git submodule add '.$config['repo-urls']['router-lucid']." lib/lucid-router/;\n";
+	$script .= 'git submodule add '.$config['repo-urls']['parsedown']." lib/parsedown/;\n";
 	
 	# the UI framework
 	$config['choices']['ui'] = ($config['choices']['ui'] == 'extjs')?'none':$config['choices']['ui'];
@@ -23,7 +24,7 @@ function lucid__build_project($config)
 	}
 	if($config['choices']['test'] != 'none')
 	{
-		$script .= 'git submodule add '.$config['repo-urls']['test-'.$config['choices']['test']]." lib/".$config['choices']['test']."-test/;\n";
+		$script .= 'git submodule add '.$config['repo-urls']['test-'.$config['choices']['test']]." lib/".$config['choices']['test']."-unittest/;\n";
 	}
 	
 	# the next gen css compiler, depending on UI framework
@@ -40,10 +41,7 @@ function lucid__build_project($config)
 	$script .= 'git submodule add '.$config['repo-urls']['hash-change']." lib/hash-change/;\n";
 	$script .= 'git submodule add '.$config['repo-urls']['jsmin']." lib/jsmin-php/;\n";
 	
-	if($config['choices']['use-wiki'])
-	{
-		$script .= 'git submodule add '.$config['repo-urls']['project-wiki']." lib/docuwiki/;\n";
-	}
+
 	
 	$script .= "git submodule update --init --recursive;\n";
 	shell_exec($script);
@@ -68,13 +66,32 @@ function lucid__build_project($config)
 	{
 		$script .= 'cp lib/lucid-project/etc/db.php etc/;';
 	}
+
+	if($config['choices']['use-wiki'])
+	{
+		$script .=  "mkdir wiki;\n";
+		$script .=  "mkdir wiki/templates;\n";
+		$script .=  "mkdir wiki/templates/standard;\n";
+		$script .=  "cp lib/lucid-project/wiki/index.php wiki/index.php;\n";
+		$script .=  "cp lib/lucid-project/wiki/deployments.md wiki/;\n";
+		$script .=  "cp lib/lucid-project/wiki/development.md wiki/;\n";
+		$script .=  "cp lib/lucid-project/wiki/footnav.md wiki/;\n";
+		$script .=  "cp lib/lucid-project/wiki/headnav.md wiki/;\n";
+		$script .=  "cp lib/lucid-project/wiki/index.md wiki/;\n";
+		$script .=  "cp lib/lucid-project/wiki/servers.md wiki/;\n";
+		$script .=  "cp lib/lucid-project/wiki/templates/standard/editor.php wiki/templates/standard/;\n";
+		$script .=  "cp lib/lucid-project/wiki/templates/standard/styles.css wiki/templates/standard/;\n";
+		$script .=  "cp lib/lucid-project/wiki/templates/standard/template_end.php wiki/templates/standard/;\n";
+		$script .=  "cp lib/lucid-project/wiki/templates/standard/template_start.php wiki/templates/standard/;\n";
+		
+	}
 	
 	# generate the serve scripts
 	$serve1 = file_get_contents(__DIR__.'/serve.sh');
 	$serve1 = str_replace('{dev-port}',$config['choices']['dev-port'],$serve1);
 	if($config['choices']['use-wiki'])
 	{
-		$serve1 .= ' & php --server 0.0.0.0:{wiki-port} --docroot $current_dir/../lib/docuwiki/ --php-ini $current_dir/../etc/';
+		$serve1 .= ' & php --server 0.0.0.0:{wiki-port} --docroot $current_dir/../wiki/ --php-ini $current_dir/../etc/';
 		$serve1 = str_replace('{wiki-port}',$config['choices']['wiki-port'],$serve1);
 	}
 	file_put_contents($config['choices']['path'].'/bin/serve.sh',$serve1);
@@ -82,7 +99,7 @@ function lucid__build_project($config)
 	$serve2 = str_replace('{dev-port}',$config['choices']['dev-port'],$serve2);
 	if($config['choices']['use-wiki'])
 	{
-		$serve2 .= ' & php --server 0.0.0.0:{wiki-port} --docroot $current_dir/../lib/docuwiki/ --php-ini $current_dir/../etc/';
+		$serve2 .= ' & php --server 0.0.0.0:{wiki-port} --docroot $current_dir/../wiki/ --php-ini $current_dir/../etc/';
 		$serve2 = str_replace('{wiki-port}',$config['choices']['wiki-port'],$serve2);
 	}
 	file_put_contents($config['choices']['path'].'/bin/serve.bat',$serve2);
